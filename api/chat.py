@@ -1,14 +1,10 @@
 import requests
-
-
-host = ""
-chat_method = "/api/chat_completion"
-api_key = ""
+from api.api_config import host, chat_api_name, api_key
 
 
 def chat_completion(user_input: str, file_id: str) -> str:
     result = requests.post(
-        host + chat_method,
+        host + chat_api_name,
         json={
             "user_input": user_input,
             "instructions_id": file_id,
